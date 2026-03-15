@@ -1,0 +1,2 @@
+// Placeholder property repository
+export {};

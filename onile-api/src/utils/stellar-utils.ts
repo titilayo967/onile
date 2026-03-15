@@ -1,0 +1,2 @@
+// Stellar utilities placeholder
+export {};

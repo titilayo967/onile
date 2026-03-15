@@ -1,0 +1,2 @@
+// Placeholder user controller
+export {};

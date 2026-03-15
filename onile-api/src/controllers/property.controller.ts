@@ -1,0 +1,2 @@
+// Placeholder property controller
+export {};

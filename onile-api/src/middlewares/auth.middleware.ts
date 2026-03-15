@@ -1,0 +1,2 @@
+// Placeholder auth middleware
+export {};

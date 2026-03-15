@@ -1,0 +1,2 @@
+// Placeholder logger middleware
+export {};

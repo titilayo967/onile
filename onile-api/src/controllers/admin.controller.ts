@@ -1,0 +1,2 @@
+// Placeholder admin controller
+export {};

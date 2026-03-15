@@ -1,0 +1,2 @@
+// Placeholder stellar service
+export {};

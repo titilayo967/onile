@@ -1,0 +1,2 @@
+// Placeholder portfolio routes
+export {};
