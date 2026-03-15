@@ -1,0 +1,2 @@
+// Controllers types placeholder
+export {};
