@@ -1,0 +1,16 @@
+/* Global styles placeholder */
+:root {
+  --bg: #fff;
+  --text: #111;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
