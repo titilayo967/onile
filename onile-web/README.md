@@ -1,3 +1,67 @@
+
+# onile-web
+**Next.js frontend for onile (App Router + Server Components)**
+
+![Next.js](https://img.shields.io/badge/Next.js-Frontend-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strongly%20Typed-blue)
+
+onile-web is the web client for the onile platform. It prioritizes performance using Next.js Server Components for SSR pages (SEO) while providing interactive client components for dashboard, trading, and portfolio management.
+
+## 🌟 Key Features
+
+* App Router structure with route groups for `(auth)` and `(dashboard)`
+* Server components for SEO and fast initial loads
+* Client components for interactive experiences (trading, portfolio)
+* WebSocket support for real-time updates
+
+## 📋 Table of Contents
+
+1. [Quick Start](#quick-start)
+2. [Project Structure](#project-structure)
+3. [Development](#development)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+
+## 🚀 Quick Start
+
+1. Copy environment template:
+
+```bash
+cp .env.example .env
+```
+
+2. Install and run:
+
+```bash
+npm install
+npm run dev
+```
+
+The app listens on `http://localhost:3000` by default.
+
+## 📁 Project Structure
+
+- `src/app` — App Router pages and groups (`(auth)`, `(dashboard)`, API routes)
+- `src/components` — UI building blocks and layout components
+- `src/hooks` — Reusable hooks (`useAuth`, `useProperties`, `usePortfolio`)
+- `src/lib` — Client utilities and API client
+- `src/store` — State management (Zustand/Redux)
+
+## 🛠 Development
+
+- Use `npm run dev` for local development
+- Keep shared types in `packages/shared-types` for API contract stability
+
+## 🧪 Testing
+
+- Unit tests: Jest (add test suites under `src/`)
+
+## 📦 Deployment
+
+- Build and export using Next.js best practices. Use containerization for production deployments.
+
+For more details, see the root `README.md`.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
