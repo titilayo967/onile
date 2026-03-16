@@ -88,8 +88,10 @@ jobs:
         if: steps.detect.outputs.manager == 'npm'
         run: |
           echo "Attempting to fix optional native dependencies (npm)"
-          # allow failure but try to install missing optional deps
-          npm install --no-save || true
+          # Try to rebuild native modules first
+          npm rebuild || true
+          # Try installing the platform-specific rollup native binary (common name). If that fails, fall back to a normal install.
+          npm install --no-save @rollup/rollup-linux-x64-gnu || npm install --no-save @rollup/rollup-linux-x64 || npm install --no-save || true
 
       # ----------------------------------
       # TypeScript Strict Type Check
