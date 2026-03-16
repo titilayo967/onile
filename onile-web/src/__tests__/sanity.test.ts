@@ -1,5 +1,11 @@
-import { it, expect } from 'vitest'
+import { describe, it, expect } from 'vitest'
 
-it('sanity check', () => {
-  expect(true).toBe(true)
+describe('sanity', () => {
+  it('basic arithmetic works', () => {
+    expect(1 + 1).toBe(2)
+  })
+
+  it('sanity check', () => {
+    expect(true).toBe(true)
+  })
 })
