@@ -39,9 +39,10 @@ jobs:
       - name: Detect package manager
         id: detect
         run: |
-          if [ -f onile-web/pnpm-lock.yaml ]; then
+          # defaults.working-directory is ./onile-web for this job, so check files relative to that directory
+          if [ -f pnpm-lock.yaml ]; then
             echo "manager=pnpm" >> $GITHUB_OUTPUT
-          elif [ -f onile-web/package-lock.json ]; then
+          elif [ -f package-lock.json ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
           else
             echo "No lockfile found. CI requires a lockfile."
@@ -57,8 +58,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: ${{ steps.detect.outputs.manager }}
           cache-dependency-path: |
-            onile-web/pnpm-lock.yaml
-            onile-web/package-lock.json
+            pnpm-lock.yaml
+            package-lock.json
 
       # ----------------------------------
       # Setup pnpm if needed
