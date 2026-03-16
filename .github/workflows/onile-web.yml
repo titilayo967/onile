@@ -82,6 +82,15 @@ jobs:
         if: steps.detect.outputs.manager == 'npm'
         run: npm ci
 
+      # Workaround: npm has a known bug installing optional native deps on some CI runners.
+      # Running `npm install --no-save` after `npm ci` re-resolves and installs optional binaries.
+      - name: Fix optional native deps (npm)
+        if: steps.detect.outputs.manager == 'npm'
+        run: |
+          echo "Attempting to fix optional native dependencies (npm)"
+          # allow failure but try to install missing optional deps
+          npm install --no-save || true
+
       # ----------------------------------
       # TypeScript Strict Type Check
       # ----------------------------------
