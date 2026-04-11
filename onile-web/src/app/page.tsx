@@ -1,41 +1,64 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import {
+  FeaturedPropertiesSection,
+  FinalCTA,
+  HeroSection,
+  HowItWorksSection,
+  LandingFooter,
+  TokenizationExplainer,
+  TrustIndicators,
+} from "@/components/landing";
+
+export const metadata: Metadata = {
+  title: "onile | Tokenized Real Estate Investing on Stellar",
+  description:
+    "Discover, invest in, and list tokenized real estate assets on onile. Access fractional ownership, transparent blockchain records, and yield-ready opportunities.",
+  openGraph: {
+    title: "onile | Tokenized Real Estate Investing on Stellar",
+    description:
+      "A premium platform for fractional real-estate ownership, token issuance, and transparent asset performance.",
+    type: "website",
+    images: [
+      {
+        url: "/illustrations/hero-tokenization.svg",
+        width: 1200,
+        height: 630,
+        alt: "onile tokenized real estate platform overview",
+      },
+    ],
+  },
+};
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "onile",
+    url: "https://onile.example",
+    description:
+      "onile tokenizes real estate assets on Stellar, enabling fractional ownership and transparent investment workflows.",
+    sameAs: [
+      "https://x.com/stellarorg",
+      "https://www.linkedin.com/company/stellar-development-foundation/",
+      "https://github.com/stellar",
+    ],
+  };
+
   return (
     <div className="app-shell">
-      <main className="container-token py-10 md:py-16">
-        <section className="surface-card p-6 md:p-10 stagger-reveal">
-          <span className="chip">Stellar-native Real Estate Investing</span>
-          <h1 className="text-display mt-4 max-w-3xl text-text-primary">
-            Own high-quality property exposure through transparent tokenized equity.
-          </h1>
-          <p className="text-body-lg mt-4 max-w-2xl">
-            onile unlocks fractional real estate ownership with a premium investment experience that blends institutional trust with modern fintech velocity.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link className="button-primary" href="/register">
-              Start Investing
-            </Link>
-            <Link className="button-secondary" href="/properties">
-              Explore Properties
-            </Link>
-          </div>
-        </section>
-
-        <section className="kpi-grid mt-6 md:mt-8">
-          {[
-            { label: "Listed Assets", value: "120+" },
-            { label: "Avg. Net Yield", value: "8.7%" },
-            { label: "Global Investors", value: "4,500+" },
-            { label: "Settlement Layer", value: "Stellar" },
-          ].map((item) => (
-            <article key={item.label} className="surface-card p-5" style={{ backgroundImage: "var(--gradient-card-accent)" }}>
-              <p className="text-caption">{item.label}</p>
-              <p className="text-h3 mt-2 text-text-primary">{item.value}</p>
-            </article>
-          ))}
-        </section>
+      <main className="container-token space-y-6 py-8 md:space-y-8 md:py-12">
+        <HeroSection />
+        <HowItWorksSection />
+        <TokenizationExplainer />
+        <FeaturedPropertiesSection />
+        <TrustIndicators />
+        <FinalCTA />
+        <LandingFooter />
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </div>
   );
 }

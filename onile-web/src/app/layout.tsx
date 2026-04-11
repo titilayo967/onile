@@ -20,6 +20,7 @@ const monoFont = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "onile | Tokenized Real Estate",
   description: "Premium web experience for discovering, investing in, and managing tokenized real estate on Stellar.",
+  metadataBase: new URL("https://onile.app"),
 };
 
 export default function RootLayout({
