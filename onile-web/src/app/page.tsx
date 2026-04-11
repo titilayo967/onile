@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { AppShell } from "@/components/layout";
 import {
   FeaturedPropertiesSection,
   FinalCTA,
   HeroSection,
   HowItWorksSection,
-  LandingFooter,
   TokenizationExplainer,
   TrustIndicators,
 } from "@/components/landing";
@@ -45,20 +45,19 @@ export default function Home() {
   };
 
   return (
-    <div className="app-shell">
-      <main className="container-token space-y-6 py-8 md:space-y-8 md:py-12">
+    <AppShell variant="public">
+      <section className="container-token space-y-6 py-8 md:space-y-8 md:py-12">
         <HeroSection />
         <HowItWorksSection />
         <TokenizationExplainer />
         <FeaturedPropertiesSection />
         <TrustIndicators />
         <FinalCTA />
-        <LandingFooter />
-      </main>
+      </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-    </div>
+    </AppShell>
   );
 }
