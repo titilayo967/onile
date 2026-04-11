@@ -1,16 +1,18 @@
-/* Global styles placeholder */
+/* Legacy compatibility file.
+   Core theme tokens and global styles now live in src/app/globals.css. */
 :root {
-  --bg: #fff;
-  --text: #111;
+  --bg: var(--color-bg-canvas);
+  --text: var(--color-text-primary);
 }
 
-html, body, #__next {
-  height: 100%;
+html,
+body,
+#__next {
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
 }
