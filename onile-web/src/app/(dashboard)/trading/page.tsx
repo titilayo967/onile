@@ -2,20 +2,18 @@ import React from 'react';
 
 export default function TradingPage() {
   return (
-    <main className="app-shell">
-      <section className="container-token py-8 md:py-12 space-y-4">
-        <span className="chip">Market Desk</span>
-        <h1 className="text-h1 text-text-primary">Trading</h1>
-        <p className="text-body">Place buy and sell intents for eligible property tokens with transparent previews and execution context.</p>
-        <div className="surface-card p-5 md:p-6 space-y-3">
-          <p className="text-h3 text-text-primary">Order Ticket Preview</p>
-          <p className="text-body-sm">Selected Pair: NGN-LAGOS-REIT / USDC</p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <button className="button-primary" type="button">Buy Tokens</button>
-            <button className="button-secondary" type="button">Sell Tokens</button>
-          </div>
+    <section className="space-y-4">
+      <span className="chip">Market Desk</span>
+      <h1 className="text-h1 text-text-primary">Trading</h1>
+      <p className="text-body">Place buy and sell intents for eligible property tokens with transparent previews and execution context.</p>
+      <div className="surface-card p-5 md:p-6 space-y-3">
+        <p className="text-h3 text-text-primary">Order Ticket Preview</p>
+        <p className="text-body-sm">Selected Pair: NGN-LAGOS-REIT / USDC</p>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <button className="button-primary" type="button">Buy Tokens</button>
+          <button className="button-secondary" type="button">Sell Tokens</button>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
